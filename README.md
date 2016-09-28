@@ -1,4 +1,4 @@
-# buildJetsonTK1Kernel
+# buildJetsonTX1Kernel
 Scripts to help build the kernel and modules onboard the Jetson TX1
 
 These scripts are for building starting from a fresh flash of L4T 24.2 on a NVIDIA Jetson TX1. 
