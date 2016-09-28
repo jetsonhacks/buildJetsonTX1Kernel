@@ -1,0 +1,11 @@
+--- tegra21_clocks.c	2016-09-27 12:53:53.842414178 -0700
++++ newtegra21_clocks.c	2016-09-08 13:44:49.000000000 -0700
+@@ -1061,7 +1061,7 @@
+  */
+ static void tegra21_cpu_clk_init(struct clk *c)
+ {
+-	c->state = (!is_lp_cluster() == (c->u.cpu.mode == MODE_G)) ? ON : OFF;
++	c->state = ((!is_lp_cluster()) == (c->u.cpu.mode == MODE_G)) ? ON : OFF;
+ }
+ 
+ static int tegra21_cpu_clk_enable(struct clk *c)
