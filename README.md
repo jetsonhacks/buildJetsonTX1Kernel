@@ -1,13 +1,13 @@
 # buildJetsonTX1Kernel
 Scripts to help build the kernel and modules onboard the Jetson TX1
 
-These scripts are for building 64-bit L4T 24.2 (Ubuntu 16.04 based) operating system on the NVIDIA Jetson TX1. The scripts should be run directly after flashing the Jetson with L4T 24.2 from a host PC. See JetsonHacks.com for article:
+These scripts are for building 64-bit L4T 24.2.1 (Ubuntu 16.04 based) operating system on the NVIDIA Jetson TX1. The scripts should be run directly after flashing the Jetson with L4T 24.2.1 from a host PC. See JetsonHacks.com for article:
 
 http://jetsonhacks.com/2016/09/28/build-tx1-kernel-and-modules-nvidia-jetson-tx1/
 
 <strong>getKernelSources.sh</strong>
 
-Downloads the kernel sources for L4T 24.2 from the NVIDIA website, decompresses them and opens a graphical editor on the .config file. 
+Downloads the kernel sources for L4T 24.2.1 from the NVIDIA website, decompresses them and opens a graphical editor on the .config file. 
 
 <strong>patchAndBuildKernel.sh</strong>
 
