@@ -10,18 +10,24 @@
 # Note that if vdso32.so.dbg is copied before the first make command, it will still fail
 # There's probably something in the Makefile for vdso32 that needs the dbg file to be absent
 # for it to build itself properly
+if [ -z "$1" ]
+  then
+    DIR="/usr/src/kernel"
+else
+  DIR=$1"/kernel"
+fi
 
 # patch tegra21_clocks.c
-sudo ./scripts/patchKernel.sh
-# Untar the vdso32 32-bit files 
+sudo ./scripts/patchKernel.sh "$DIR"
+# Untar the vdso32 32-bit files
 tar -xvf vdso32Files.tbz2
-sudo cp vgettimeofday.o /usr/src/kernel/arch/arm64/kernel/vdso32
+sudo cp vgettimeofday.o $DIR/arch/arm64/kernel/vdso32
 # Start the kernel make process (It should fail, with issues related to vdso32.so.dbg)
-sudo ./scripts/makeKernel.sh
+sudo ./scripts/makeKernel.sh "$DIR"
 # Copy over vdso32.so.dbg, the rest of the kernel should compile
-sudo cp vdso32.so.dbg /usr/src/kernel/arch/arm64/kernel/vdso32
+sudo cp vdso32.so.dbg $DIR/arch/arm64/kernel/vdso32
 # Finish building the kernel, then build the modules and install them
-sudo ./scripts/makeKernel1.sh
+sudo ./scripts/makeKernel1.sh "$DIR"
 # Cleanup a little
 rm vgettimeofday.o
 rm vdso32.so.dbg
