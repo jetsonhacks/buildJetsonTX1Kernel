@@ -1,4 +1,4 @@
-# buildJetsonTX2Kernel
+# buildJetsonTX1Kernel
 Scripts to help build the 4.4.38 kernel and modules onboard the Jetson TX1 (L4T 28.1, JetPack 3.1). For previous versions, visit the 'tags' section.
 
 As of this writing, the "official" way to build the Jetson TX1 kernel is to use a cross compiler on a Linux PC. These scripts are an alternative which builds the kernel onboard the Jetson itself. These scripts will download the kernel source to the Jetson TX1, wrangle some of the Makefiles to make them work on the Jetson, and then compile the kernel and selected modules. The newly compiled kernel can then be installed.
