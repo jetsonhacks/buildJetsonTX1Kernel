@@ -1,6 +1,9 @@
 # buildJetsonTX1Kernel
 Scripts to help build the 4.4.38 kernel and modules onboard the Jetson TX1 (L4T 28.1, JetPack 3.1). For previous versions, visit the 'tags' section.
 
+<em><strong>Note:</strong> The kernel source version must match the version of firmware flashed on the Jetson. For example, the source for the 4.4.38 kernel here is matched with L4T 28.1. This kernel compiled using this source tree will not work with newer versions or older versions of L4T, only 28.1.</em>
+
+
 As of this writing, the "official" way to build the Jetson TX1 kernel is to use a cross compiler on a Linux PC. These scripts are an alternative which builds the kernel onboard the Jetson itself. These scripts will download the kernel source to the Jetson TX1, wrangle some of the Makefiles to make them work on the Jetson, and then compile the kernel and selected modules. The newly compiled kernel can then be installed.
 
 WARNING: After flashing the Jetson TX1, there is a limited amount of room on the device. After completing these scripts there will be NO space on the device. You MUST remove some of the files that were added in the /usr/src directory. You should store the /usr/src/kernel directory offboard (like on a SATA drive or USB stick) along with the compressed sources before deleting them. You may want to use them again later.
