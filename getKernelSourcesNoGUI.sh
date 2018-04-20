@@ -11,6 +11,7 @@ echo "Jetpack $JETSON_JETPACK [L4T $JETSON_L4T]"
 L4TTarget="28.2"
 if [ $JETSON_L4T == $L4TTarget ] ; then
    echo "Getting kernel sources"
+   sudo ./scripts/getKernelSourcesNoGUI.sh
 else
    echo ""
    tput setaf 1
@@ -31,5 +32,3 @@ else
    echo ""
 fi
 
-exit
-sudo ./scripts/getKernelSourcesNoGUI.sh
