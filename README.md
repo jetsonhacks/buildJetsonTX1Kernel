@@ -4,9 +4,9 @@ Scripts to help build the 4.4.38 kernel and modules onboard the Jetson TX1 (L4T 
 <em><strong>Note:</strong> The kernel source version must match the version of firmware flashed on the Jetson. For example, the source for the 4.4.38 kernel here is matched with L4T 28.2. This kernel compiled using this source tree will not work with newer versions or older versions of L4T, only 28.2.</em>
 
 
-As of this writing, the "official" way to build the Jetson TX1 kernel is to use a cross compiler on a Linux PC. These scripts are an alternative which builds the kernel onboard the Jetson itself. These scripts will download the kernel source to the Jetson TX1, wrangle some of the Makefiles to make them work on the Jetson, and then compile the kernel and selected modules. The newly compiled kernel can then be installed.
+As of this writing, the "official" way to build the Jetson TX1 kernel is to use a cross compiler on a Linux PC. These scripts are an alternative which builds the kernel onboard the Jetson itself. These scripts will download the kernel source to the Jetson TX1 and then compile the kernel and selected modules. The newly compiled kernel can then be installed.
 
-<strong>WARNING:</strong> After flashing the Jetson TX1, there is a limited amount of room on the device. You should modify the kernel directly after flashing the device. After completing these scripts there will be little space left on the device. Afterwards, you should remove some of the files that were added in the /usr/src directory. You may want to store the /usr/src/kernel directory offboard (like on a SATA drive or USB stick) along with the compressed sources before deleting them as you may want to use them again later.
+<strong>WARNING:</strong> After flashing the Jetson TX1, there is a limited amount of room on the device. You should modify the kernel directly after flashing the device. After completing these scripts there will be little space left on the device. After building the kernel and modules, you should remove some of the files that were added in the /usr/src directory. You may want to store the /usr/src/kernel directory offboard (like on a SATA drive or USB stick) along with the compressed sources before deleting them as you may want to use them again later.
 
 These scripts are for building the kernel for the 64-bit L4T 28.2 (Ubuntu 16.04 based) operating system on the NVIDIA Jetson TX1. The scripts should be run directly after flashing the Jetson with L4T 28.2 from a host PC. There are five scripts:
 
@@ -16,7 +16,7 @@ Downloads the kernel sources for L4T 28.2 from the NVIDIA website, decompresses 
 
 <strong>getKernelSourcesNoGUI.sh</strong>
 
-Downloads the kernel sources for L4T 28.2 from the NVIDIA website, decompresses them. This is useful when using SSH, or you prefer a different method of editing the .config file. 
+Downloads the kernel sources for L4T 28.2 from the NVIDIA website and decompresses them. This is useful when using SSH, or you prefer a different method of editing the .config file. 
 
 <strong>makeKernel.sh</strong>
 
@@ -36,7 +36,9 @@ Removes all of the kernel sources and compressed source files. You may want to m
 
 These scripts make only the kernel Image and Modules. You will need to modify the scripts if more are needed.
 
-<strong>IMPORTANT</strong>The copyImage.sh script copies the Image to the current device. If you are building the kernel on an external device, for example a SSD, you will want to copy the Image file over to the eMMC in the eMMC /boot directory if you are booting from the eMMC and using external storage as your root directory. 
+<strong>IMPORTANT</strong> The copyImage.sh script copies the Image to the current device. If you are building the kernel on an external device, for example a SSD, you will want to copy the Image file over to the eMMC in the eMMC /boot directory if you are booting from the eMMC and using external storage as your root directory. 
+
+Special thanks to Raffaello Bonghi (https://github.com/rbonghi) for jeston_easy scripts.
 
 
 ### Release Notes
@@ -56,6 +58,7 @@ July, 2017
 * L4T 24.2.1 
 
 April, 2017
+* Initial Release
 * v1.0-L4T24.2
 * L4T 24.2
 
