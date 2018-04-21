@@ -5,8 +5,8 @@ cd /usr/src/kernel/kernel-4.4
 make prepare
 make modules_prepare
 # Make alone will build the dts files too
-# make -j4
-make -j4 Image
+NUM_CPU=$(nproc)
+make -j$NUM_CPU Image
 make modules
 make modules_install
 

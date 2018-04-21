@@ -11,7 +11,7 @@ echo "Jetpack $JETSON_JETPACK [L4T $JETSON_L4T]"
 L4TTarget="28.2"
 if [ $JETSON_L4T == $L4TTarget ] ; then
    echo "Getting kernel sources"
-   sudo ./scripts/getKernelSources.sh
+   sudo ./scripts/getKernelSourcesNoGUI.sh
 else
    echo ""
    tput setaf 1
@@ -20,7 +20,7 @@ else
    echo ""
    echo "This repository branch is for installing the kernel sources for L4T "$L4TTarget 
    echo "You are attempting to use these kernel sources on a L4T "$JETSON_L4T "system."
-   echo "The kernel sources do not match their L4T release!"
+   echo "The kernel sources do not match their L4T release.!"
    echo ""
    echo "Please git checkout the appropriate kernel sources for your release"
    echo " "
@@ -31,5 +31,4 @@ else
    echo "$ git checkout v1.0-L4T"$JETSON_L4T
    echo ""
 fi
-
 
