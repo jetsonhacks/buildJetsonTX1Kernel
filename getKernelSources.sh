@@ -20,7 +20,7 @@ else
    echo ""
    echo "This repository branch is for installing the kernel sources for L4T "$L4TTarget 
    echo "You are attempting to use these kernel sources on a L4T "$JETSON_L4T "system."
-   echo "The kernel sources do not match their L4T release.!"
+   echo "The kernel sources do not match their L4T release!"
    echo ""
    echo "Please git checkout the appropriate kernel sources for your release"
    echo " "
