@@ -2,7 +2,7 @@
 
 ## Deprecated
 
-For versions of L4T newer than 3.2, please see **jetson-linux-build** https://github.com/jetsonhacks/jetson-linux-build
+For newer versions of L4T, please see **jetson-linux-build** https://github.com/jetsonhacks/jetson-linux-build
 
 ## README
 
