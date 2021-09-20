@@ -1,4 +1,11 @@
 # buildJetsonTX1Kernel
+
+## Deprecated
+
+For versions of L4T newer than 3.2, please see **jetson-linux-build** https://github.com/jetsonhacks/jetson-linux-build
+
+## README
+
 Scripts to help build the 4.4.38 kernel and modules onboard the Jetson TX1 (L4T 28.2, JetPack 3.2). For previous versions, visit the 'tags' section.
 
 <em><strong>Note:</strong> The kernel source version must match the version of firmware flashed on the Jetson. For example, the source for the 4.4.38 kernel here is matched with L4T 28.2. This kernel compiled using this source tree will not work with newer versions or older versions of L4T, only 28.2.</em>
